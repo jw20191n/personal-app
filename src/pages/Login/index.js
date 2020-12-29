@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tabs, Form } from 'antd';
-import { UserOutlined, LockTwoTone } from '@ant-design/icons';
+import { UserOutlined, LockTwoTone, MobileTwoTone, MailTwoTone } from '@ant-design/icons';
 import InputItem from '../../components/InputItem';
 import SubmitButton from '../../components/SubmitButton';
 import styles from './index.module.less';
@@ -45,7 +45,26 @@ const Login = () => {
                                 ]}/>    
                         </TabPane>
                         <TabPane tab="Sign in with mobile" key="2">
-                            dsads
+                        <InputItem 
+                                name="mobile"
+                                prefix={<MobileTwoTone />}
+                                placeholder="mobile phone number" size="large"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Please enter mobile phone number'
+                                    }
+                                ]}/>
+                            <InputItem 
+                                name="captcha"
+                                prefix={<MailTwoTone />}
+                                placeholder="code received" size="large"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Please enter the code you received'
+                                    }
+                                ]}/>    
                         </TabPane>
                     </Tabs>
                     <SubmitButton>Sign in</SubmitButton>
