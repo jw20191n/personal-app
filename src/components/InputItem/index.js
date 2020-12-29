@@ -1,15 +1,36 @@
 import { Input, Form, Button, Row, Col, message } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './index.module.less';
 
 const InputItem = (props) => {
     const { name, rules, ...rest } = props; 
-    const [isCountingDown, setTiming] = useState(false); //if the timer is running
+    const [isCountingDown, setCountDown] = useState(false); //if the timer is running
+    const [count, setCount] = useState(props.countDown || 60);//time left in count down timer
+
 
     const handleClickCaptcha = () => {
         message.success('Verification successfully sent');
-        setTiming(true);
+        setCountDown(true);
     }
+
+    //monitor the change of state of the 'isCountingDown'
+    useEffect(() => {
+        let interval = 0;
+        if(isCountingDown){
+            interval = window.setInterval( () => {
+                setCount((preSec) => {
+                    if( preSec <= 1){
+                        setCountDown(false);//count down is over
+                        clearInterval(interval);
+                        return props.countDown || 60;
+                    }
+                    return preSec - 1;
+                })
+            }, 1000);
+        }
+        return () => clearInterval(interval);
+    }, [isCountingDown])
+
 
     if(name === 'captcha'){
         return(
