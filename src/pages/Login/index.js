@@ -25,12 +25,24 @@ const Login = () => {
                             <InputItem 
                                 name="username"
                                 prefix={<UserOutlined style={{ color: '#1890ff' }}/>}
-                                placeholder="username" size="large"/>
+                                placeholder="username" size="large"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Please enter username'
+                                    }
+                                ]}/>
                             <InputItem 
                                 name="password"
                                 prefix={<LockTwoTone style={{ color: '#1890ff' }}/>}
                                 type="password"
-                                placeholder="password" size="large"/>    
+                                placeholder="password" size="large"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Please enter password'
+                                    }
+                                ]}/>    
                         </TabPane>
                         <TabPane tab="Sign in with mobile" key="2">
                             dsads

@@ -2,9 +2,9 @@ import { Input, Form } from 'antd';
 import React from 'react';
 
 const InputItem = (props) => {
-    const { name, ...rest } = props; 
+    const { name, rules, ...rest } = props; 
     return(
-        <Form.Item name={name}>
+        <Form.Item name={name} rules={rules}>
             <Input {...rest}/>
         </Form.Item>
        
