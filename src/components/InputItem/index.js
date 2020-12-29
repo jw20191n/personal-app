@@ -1,10 +1,13 @@
-import { Input } from 'antd';
+import { Input, Form } from 'antd';
 import React from 'react';
 
 const InputItem = (props) => {
-    
+    const { name, ...rest } = props; 
     return(
-        <Input {...props}/>
+        <Form.Item name={name}>
+            <Input {...rest}/>
+        </Form.Item>
+       
     )
 }
 
