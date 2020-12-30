@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Row, Col, Card } from 'antd';
+import { Row, Col, Card, Divider } from 'antd';
+import { ContactsOutlined, ClusterOutlined, HomeOutlined} from '@ant-design/icons';
 import Articles from './components/Articles';
 import Projects from './components/Projects';
 import Applications from './components/Applications';
@@ -43,6 +44,26 @@ const renderChildrenByTabKey = (tabKey) => {
     }
 }
 
+const renderUserInfo = (currentUser) => (
+    <div className={styles.detail}>
+        <p>
+            <ContactsOutlined className={styles.userInfoIcon}/>
+            {currentUser.title}
+        </p>
+        <p>
+            <ClusterOutlined className={styles.userInfoIcon}/>
+            {currentUser.group}
+        </p>
+        <p>
+            <HomeOutlined className={styles.userInfoIcon}/>
+            { (currentUser.geographic || {province: {lable: ''}}).province.label
+            }
+            { (currentUser.geographic || {city: {lable: ''}}).city.label
+            }
+        </p>
+    </div>
+)
+
 const Home = () => {
     const [tabKey, setTabKey] = useState('articles');
     //change the prop key as the activeKey
@@ -62,6 +83,8 @@ const Home = () => {
                             </div>
                             <div>{currentUser.signature}</div>
                         </div>
+                        {renderUserInfo(currentUser)}
+                        <Divider dashed/>
                     </Card>
                 </Col>
                 <Col lg={17} md={24}>
