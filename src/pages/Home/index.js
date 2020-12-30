@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Row, Col, Card } from 'antd';
+import Articles from './components/Articles';
+import Projects from './components/Projects';
+import Applications from './components/Applications';
 import styles from './index.module.less';
 
 const operationTabList = [{ 
@@ -27,6 +30,18 @@ const operationTabList = [{
     )
 }];
 
+const renderChildrenByTabKey = (tabKey) => {
+    switch (tabKey){
+        case 'projects':
+            return <Projects />;
+        case 'applications': 
+            return <Applications />;
+        case 'articles':
+            default: 
+            return <Articles />
+    }
+}
+
 const Home = () => {
     const [tabKey, setTabKey] = useState('articles');
     //change the prop key as the activeKey
@@ -49,16 +64,7 @@ const Home = () => {
                         activeTabKey={tabKey}
                         onTabChange={onTabChange}
                         >
-                        { 
-                            tabKey === 'articles' && 'Articles'
-                        }
-                        { 
-                            tabKey === 'applications' && 'Applications'
-                        }
-                        { 
-                            tabKey === 'projects' && 'Projects'
-                        }
-                       
+                        { renderChildrenByTabKey(tabKey) }
                     </Card>
                 </Col>
             </Row>
