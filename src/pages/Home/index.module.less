@@ -25,6 +25,7 @@
     }
 }
 
+
 .detail{
     p {
        position: relative;
@@ -41,4 +42,32 @@
         width: 14px;
         height: 14px;
     }
+}
+
+.teamTitle {
+    margin-bottom: 12px;
+    // color: @heading-color;
+    font-weight: 500;
+}
+
+.team {
+ :global {
+     .ant-avatar {
+         margin-right: 12px;
+     }
+ }   
+ a {
+    display: block;
+    margin-bottom: 24px;
+    overflow: hidden;
+//  color: @text-color;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    transition: color 0.3s;
+    &:hover {
+        // color: @primary-color;
+    }
+
+ }
 }
