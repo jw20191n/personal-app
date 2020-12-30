@@ -16,15 +16,27 @@ const Home = () => {
                         bordered={false}
                         tabList={[ { 
                             key: 'article',
-                            tab: 'Article'
+                            tab: (
+                                <span>
+                                    Article <span>(8)</span>
+                                </span>
+                            )
                         },
                         { 
                             key: 'applications',
-                            tab: 'App'
+                            tab: (
+                                <span>
+                                    App <span>(18)</span>
+                                </span>
+                            )
                         },
                         { 
                             key: 'projects',
-                            tab: 'Projects'
+                            tab: (
+                                <span>
+                                    Project <span>(10)</span>
+                                </span>
+                            )
                         } ]}
                     >
                         pqstr
