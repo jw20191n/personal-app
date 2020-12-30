@@ -2,6 +2,31 @@ import React from 'react';
 import { Row, Col, Card } from 'antd';
 import styles from './index.module.less';
 
+const operationTabList = [{ 
+    key: 'article',
+    tab: (
+        <span>
+            Article <span>(8)</span>
+        </span>
+    )
+},
+{ 
+    key: 'applications',
+    tab: (
+        <span>
+            App <span>(18)</span>
+        </span>
+    )
+},
+{ 
+    key: 'projects',
+    tab: (
+        <span>
+            Project <span>(10)</span>
+        </span>
+    )
+}];
+
 const Home = () => {
     return(
         <div className={styles.container}>
@@ -14,30 +39,7 @@ const Home = () => {
                 <Col lg={17} md={24}>
                     <Card 
                         bordered={false}
-                        tabList={[ { 
-                            key: 'article',
-                            tab: (
-                                <span>
-                                    Article <span>(8)</span>
-                                </span>
-                            )
-                        },
-                        { 
-                            key: 'applications',
-                            tab: (
-                                <span>
-                                    App <span>(18)</span>
-                                </span>
-                            )
-                        },
-                        { 
-                            key: 'projects',
-                            tab: (
-                                <span>
-                                    Project <span>(10)</span>
-                                </span>
-                            )
-                        } ]}
+                        tabList={operationTabList}
                     >
                         pqstr
                     </Card>
