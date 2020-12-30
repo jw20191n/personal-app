@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Row, Col, Card } from 'antd';
 import styles from './index.module.less';
 
 const operationTabList = [{ 
-    key: 'article',
+    key: 'articles',
     tab: (
         <span>
             Article <span>(8)</span>
@@ -28,6 +28,12 @@ const operationTabList = [{
 }];
 
 const Home = () => {
+    const [tabKey, setTabKey] = useState('articles');
+    //change the prop key as the activeKey
+    const onTabChange = (key) => {
+        setTabKey(key);
+    }
+
     return(
         <div className={styles.container}>
             <Row gutter={24}>
@@ -40,8 +46,19 @@ const Home = () => {
                     <Card 
                         bordered={false}
                         tabList={operationTabList}
-                    >
-                        pqstr
+                        activeTabKey={tabKey}
+                        onTabChange={onTabChange}
+                        >
+                        { 
+                            tabKey === 'articles' && 'Articles'
+                        }
+                        { 
+                            tabKey === 'applications' && 'Applications'
+                        }
+                        { 
+                            tabKey === 'projects' && 'Projects'
+                        }
+                       
                     </Card>
                 </Col>
             </Row>
