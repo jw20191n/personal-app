@@ -3,6 +3,7 @@ import { Row, Col, Card } from 'antd';
 import Articles from './components/Articles';
 import Projects from './components/Projects';
 import Applications from './components/Applications';
+import { currentUser, fakeList } from './data';
 import styles from './index.module.less';
 
 const operationTabList = [{ 
@@ -54,7 +55,13 @@ const Home = () => {
             <Row gutter={24}>
                 <Col lg={7} md={24}>
                     <Card bordered={false} style={{ marginBottom: 24 }}>
-                        asdas
+                        <div className={styles.avatarHolder}>
+                            <img alt="" src={currentUser.avatar}/>
+                            <div className={styles.name}>
+                                {currentUser.name}
+                            </div>
+                            <div>{currentUser.signature}</div>
+                        </div>
                     </Card>
                 </Col>
                 <Col lg={17} md={24}>
