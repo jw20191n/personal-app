@@ -64,28 +64,28 @@ const titles = [
         createdAt: new Date(new Date().getTime() - 1000 * 60 * 60 * 2 * i).getTime(),
         subDescription: desc[i % 5],
         description:
-          'åœ¨ä¸­å°äº§å“çš„ç ”å‘è¿‡ç¨‹ä¸­ï¼Œä¼šå‡ºçŽ°ä¸åŒçš„è®¾è®¡è§„èŒƒå’Œå®žçŽ°æ–¹å¼ï¼Œä½†å…¶ä¸­å¾€å¾€å­˜åœ¨å¾ˆå¤šç±»ä¼¼çš„é¡µé¢å’Œç»„ä»¶ï¼Œè¿™äº›ç±»ä¼¼çš„ç»„ä»¶ä¼šè¢«æŠ½ç¦»æˆä¸€å¥—æ ‡å‡†è§„èŒƒã€‚',
+          '哼哼哈hi快使用双截棍，巴拉巴拉小魔仙的爸爸',
         activeUser: Math.ceil(Math.random() * 100000) + 100000,
         newUser: Math.ceil(Math.random() * 1000) + 1000,
         star: Math.ceil(Math.random() * 100) + 100,
         like: Math.ceil(Math.random() * 100) + 100,
         message: Math.ceil(Math.random() * 10) + 10,
         content:
-          'æ®µè½ç¤ºæ„ï¼šèš‚èšé‡‘æœè®¾è®¡å¹³å° ant.designï¼Œç”¨æœ€å°çš„å·¥ä½œé‡ï¼Œæ— ç¼æŽ¥å…¥èš‚èšé‡‘æœç”Ÿæ€ï¼Œæä¾›è·¨è¶Šè®¾è®¡ä¸Žå¼€å‘çš„ä½“éªŒè§£å†³æ–¹æ¡ˆã€‚èš‚èšé‡‘æœè®¾è®¡å¹³å° ant.designï¼Œç”¨æœ€å°çš„å·¥ä½œé‡ï¼Œæ— ç¼æŽ¥å…¥èš‚èšé‡‘æœç”Ÿæ€ï¼Œæä¾›è·¨è¶Šè®¾è®¡ä¸Žå¼€å‘çš„ä½“éªŒè§£å†³æ–¹æ¡ˆã€‚',
+          '本来是一长串乱码，我也不知道替换一些什么鬼比较好。反正就瞎写呗',
         members: [
           {
             avatar: 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-            name: 'æ›²ä¸½ä¸½',
+            name: '哈利波特',
             id: 'member1',
           },
           {
             avatar: 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-            name: 'çŽ‹æ˜­å›',
+            name: '深井冰',
             id: 'member2',
           },
           {
             avatar: 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-            name: 'è‘£å¨œå¨œ',
+            name: '财神',
             id: 'member3',
           },
         ],
