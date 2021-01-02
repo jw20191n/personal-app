@@ -5,6 +5,7 @@ import { ContactsOutlined, ClusterOutlined, HomeOutlined} from '@ant-design/icon
 import Articles from './components/Articles';
 import Projects from './components/Projects';
 import Applications from './components/Applications';
+import TagList from './components/TagList';
 import { currentUser, fakeList } from './data';
 import styles from './index.module.less';
 
@@ -85,6 +86,8 @@ const Home = () => {
                             <div>{currentUser.signature}</div>
                         </div>
                         {renderUserInfo(currentUser)}
+                        <Divider dashed/>
+                        <TagList tags={currentUser.tags}/>
                         <Divider dashed/>
                         <div className={styles.team}>
                             <div className={styles.teamTitle}>
