@@ -1,15 +1,18 @@
 import { Input, Form, Button, Row, Col, message } from 'antd';
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'redux-react-hook';
+import { getCaptcha } from '../../actions/register';
 import styles from './index.module.less';
 
 const InputItem = (props) => {
+    const dispatch = useDispatch();
     const { name, rules, ...rest } = props; 
     const [isCountingDown, setCountDown] = useState(false); //if the timer is running
     const [count, setCount] = useState(props.countDown || 60);//time left in count down timer
 
-
     const handleClickCaptcha = () => {
         message.success('Verification successfully sent');
+        dispatch(getCaptcha());
         setCountDown(true);
     }
 
