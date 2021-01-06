@@ -12,6 +12,7 @@ import styles from './index.module.less';
 //fakeList is a function
 const articleList = fakeList(10);
 const applicationList = fakeList(10);
+const projectList = fakeList(10);
 
 const operationTabList = [{ 
     key: 'articles',
@@ -41,7 +42,7 @@ const operationTabList = [{
 const renderChildrenByTabKey = (tabKey) => {
     switch (tabKey){
         case 'projects':
-            return <Projects />;
+            return <Projects list={projectList}/>;
         case 'applications': 
             return <Applications list={applicationList} />;
         case 'articles':
