@@ -34,6 +34,12 @@ const InputItem = (props) => {
         return () => clearInterval(interval);
     }, [isCountingDown])
 
+    //在useEffect里return一个函数
+    //就相当与ComponentWillUnmount -> 当组件需要被卸载的时候，会执行一些东西
+    //等效于： 
+    //useEffect(() => { 
+    //     return () => console.log('unmount');
+    // }, [])
 
     if(name === 'captcha'){
         return(

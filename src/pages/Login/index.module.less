@@ -1,3 +1,5 @@
+// @import '~antd/es/style/themes/default.less';
+
 .loginContainer {
     background-image: url("https://www.leoscamera.com/images/cached/BD_Backgrounds_Super_White_Background_Paper_129_27_2000x2000_801d8cd6a39757466658bedfff1e52.jpg");
     background-repeat: no-repeat;
@@ -22,6 +24,27 @@
                     margin: 0 auto;
                 }
             }
+        }
+    }
+
+    .icon {
+        margin-left: 16px;
+        // color: @text-color-secondary;
+        color: grey;
+        font-size: 24px;
+        vertical-align: middle;
+        cursor: pointer;
+        transition: color 0.3s;
+        &:hover {
+        //   color: @primary-color;
+        }
+    }
+
+    .other {
+        margin-top: 24px;
+        line-height: 22px;
+        .register {
+          float: right;
         }
     }
 }

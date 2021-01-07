@@ -7,3 +7,4 @@ export function getCaptcha(payload = {}){
         console.log(result);
     }
 }
+
