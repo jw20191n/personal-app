@@ -10,6 +10,7 @@ import './index.less';
 const store = createStore(
   reducers,
   applyMiddleware(thunk)
+  //other store enhancers if any
 )
 
 ReactDOM.render(

@@ -6,6 +6,7 @@ import InputItem from '../../components/InputItem';
 import SubmitButton from '../../components/SubmitButton';
 import styles from './index.module.less';
 import { formatCountdown } from 'antd/lib/statistic/utils';
+import { getCaptcha, register } from '../../api/register';
 
 const { Option } = Select;
 
@@ -34,7 +35,7 @@ const passwordProgressMap = {
 }
 
 const Register = () => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const [visible, setVisible] = useState(false);
     const [form] = Form.useForm();
     const [popover, setPopover] = useState(false);
@@ -95,7 +96,11 @@ const Register = () => {
     };
 
     const handleClickCaptcha = () => {
-
+        form.validateFields(['username', 'email', 'password'])
+            .then(()=>{
+                console.log(form.getFieldsValue(['username', 'email', 'password']));
+                dispatch(getCaptcha());
+            });
     }
 
     return(
@@ -205,10 +210,10 @@ const Register = () => {
                         name="captcha"
                         size="large"
                         rules={[
-                        {
-                            required: true,
-                            message: '请输入验证码'
-                        }
+                            {
+                                required: true,
+                                message: '请输入验证码'
+                            }
                         ]}
                         placeholder="验证码"
                         onClick={handleClickCaptcha}
