@@ -6,7 +6,7 @@ import InputItem from '../../components/InputItem';
 import SubmitButton from '../../components/SubmitButton';
 import styles from './index.module.less';
 import { formatCountdown } from 'antd/lib/statistic/utils';
-import { getCaptcha, register } from '../../api/register';
+import { getCaptcha, register } from '../../actions/accounts';
 
 const { Option } = Select;
 

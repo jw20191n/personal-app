@@ -1,7 +1,7 @@
 import { Input, Form, Button, Row, Col, message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'redux-react-hook';
-import { getCaptcha } from '../../actions/register';
+import { getCaptcha } from '../../actions/accounts';
 import styles from './index.module.less';
 
 const InputItem = (props) => {
